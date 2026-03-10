@@ -25,7 +25,6 @@ class Task(db.Model):
     def __repr__(self):
         return f'<Task {self.id}>'
 
-
 # Flask route for displaying all tasks
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -42,11 +41,6 @@ def index():
     # SELECT all Task objects from database
     tasks = Task.query.all()
     return render_template('index.html', tasks=tasks)
-
-
-
-
-
 
 # Create the database instance in main method
 if __name__ == "__main__":
